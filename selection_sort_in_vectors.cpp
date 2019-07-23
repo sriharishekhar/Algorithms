@@ -3,11 +3,11 @@
 #include <iterator>
 using namespace std;
 
-void swap(int *v1, int *v2) {
+void swap (vector <char> &v, int min, int j) {
   int temp;
-  temp = *v1;
-  *v1 = *v2;
-  *v2 = temp; 
+  temp = v[min];
+  v[min] = v[j];
+  v[j] = temp; 
 }
 
 void display(vector <char> &v) {
@@ -20,15 +20,15 @@ void selection_sort(vector <char> v) {
   vector <char> :: iterator itr1;
   vector <char> :: iterator itr2;
   vector <char> :: iterator itr3;
-  int a;
-  for (itr1 = v.begin(); itr1 < v.end(); itr1++) {
-  	itr3 = itr1;
-  	for ( itr2 = itr1; itr2 != v.end(); itr2++) {
-      if (v[a] > *itr2) {
-      	a = itr2;
+  int min, i, j;
+  for (i = 0; i < v.size(); i++) {
+  	min = i;
+  	for (j = i; j < v.size(); j++) {
+      if (v[min] > v[j]) {
+      	min = j;
       } 	   
   	}
-  	swap (v[a], v[itr1]);
+  	swap (v,min,j);
   }	
   display(v);
 }
@@ -36,7 +36,6 @@ void selection_sort(vector <char> v) {
 int main() {
   string s("amanjumpedoverabuilding");	
   vector <char> v (s.begin(), s.end());
-  cout << v;
   selection_sort(v);
   return 0;
 }
