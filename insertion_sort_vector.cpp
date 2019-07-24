@@ -24,9 +24,8 @@ void insertion_sort(vector <int> v) {
 }
 
 int main() {
-
-int a[] = {9,8,7,1,4,3,3,1,7,4};
-int n = sizeof(a)/sizeof(a[0]);  
-vector <int> v(a, a + n);
-return 0;
+  int a[] = {9,8,7,1,4,3,3,1,7,4};
+  int n = sizeof(a)/sizeof(a[0]);  
+  vector <int> v(a, a + n);
+  return 0;
 }
