@@ -1,5 +1,6 @@
-#include<iostream>
-#include<string>
+#include
+#include <iostream>
+#include <string>
 using namespace std;
 
 void remove_duplicates(string& s) {
