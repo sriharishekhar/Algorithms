@@ -1,6 +1,7 @@
 // Q. Remove all duplicates from a sorted string.
-// Algorithm 1 - Using set. Copy all elements from string to set. 
-//				 As set takes no duplicate value. Program will run in o(n)
+// Algorithm 1 - 
+// Using set. Copy all elements from string to set. 
+// As set takes no duplicate value. Program will run in o(n)
 
 #include <iostream>
 #include <set>
