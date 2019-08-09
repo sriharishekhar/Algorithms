@@ -1,29 +1,44 @@
 //Q. Remove duplicates in a sorted array
 // Algo : 
 
-#include <iostream> 
+#include <iostream>
 #include <string>
-using namespace std; 
 
-string removeDuplicates(string& s) 
-{ 
-  string temp_string;  
-  int j = 0; 
-  for (int i = 0; i < s.size() - 2; i++) { 
-    if (s[i] != s[i+1]) {
-      temp_string[j++] = s[i]; 
+using namespace std;
+
+void remove_duplicate_ina_sortedarray(string& s) {
+  for (int i = 0; i < s.size(); i++) {
+    int index = i + 1;
+    for (int j = i; j < s.size(); j++) {
+      if (s[i] != s[j]) {
+        s[index] = s[j];
+        index++;
+      }
+      if (i == s.size() - 1) {
+        int k = i;
+        while (s[k] == s[k-1]) {
+          s.pop_back();
+          k--;
+        }
+      }
     }
-  } 
-  if () 
-  return temp_string; 
-} 
-
-int main() 
-{ 
-  string s("aaaabbccdeeeffghiimnnpssuvwwxyyz");
-  string s2 = removeDuplicates(s); 
-  for (int i = 0; i < s2.size(); i++) { 
-    cout << s2[i] << " "; 
   }
-  return 0; 
+}
+
+void print(string s) {
+  cout << "String after duplicates are removed: ";
+  for (int i = 0; i < s.size(); i++) {
+    cout << s[i];
+  }
+  cout << endl;  
+}
+
+int main() {
+  
+  string s = "aabbbcccddefgghhhijjklmssuuswxyyzz";
+  cout << "String before duplicates are removed: " << s << endl;
+  remove_duplicate_ina_sortedarray(s);
+  print(s);
+
+  return 0;
 }
