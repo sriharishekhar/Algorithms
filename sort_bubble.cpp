@@ -32,7 +32,7 @@ void optimized_bubble_sort(int a[], int n) {
 }
 
 int main() {
-   {13, 4, 1, 42, 3, 6};
+  int a = {13, 4, 1, 42, 3, 6};
   int n = sizeof(a)/sizeof(a[0]);
   cout << "Unsorted array: ";
   print(a,n);
