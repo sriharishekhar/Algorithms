@@ -1,3 +1,14 @@
+// Binary Search
+// Algo:
+// Binary search works on sorted arrays. 
+// Binary search begins by comparing an element in the middle of the array with the target value. 
+// If the target value matches the element, its position in the array is returned. 
+// If the target value is less than the element, recursively search this half of the array. 
+// If the target value is greater than the element, the recursively search this half of the array. 
+// By doing this, the algorithm eliminates the half in which the target value cannot lie in each iteration.
+//
+// Time Complexity : Best case - O(1)
+//                   Worts case - O(logn)
 
 #include <iostream>
 using namespace std;
