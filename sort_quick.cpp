@@ -4,6 +4,9 @@
 // arrange all elements smaller than pivot to the left
 // arrange all elements bigger than pivot to the right
 
+// Time Complexoty : O(nlogn)
+// The sorting takes in-place
+
 
 #include <iostream>
 
