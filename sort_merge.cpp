@@ -1,10 +1,3 @@
-// Merge sort
-// Algo: Divide & Conquer
-// Divide array into two parts -> a[0..m] & a[m+1,...r]
-// recursively divide further till size becomes 1 
-// merge processes come into action and starts merging till array is completely merged
-
-
 #include <iostream>
 
 using namespace std;
