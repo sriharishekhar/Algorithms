@@ -1,3 +1,15 @@
+// Merge sort
+// Algo: Divide & Conquer
+// Divide unsorted list into two parts -> a[0..m] & a[m+1,...r]
+// recursively divide further till size becomes 1
+// a list of 1 element is supposed sorted
+// Repeatedly merge sublists to produce newly sorted sublists until there is only 1 sublist remaining. This will be the sorted list.
+// 
+// Time Complexoty : O(nlogn)
+//
+// Uses : 1. Merge Sort is useful for sorting linked lists in O(nLogn) time
+//        2. Inversion Count Problem
+//        3. External Sorting
 #include <iostream>
 
 using namespace std;
