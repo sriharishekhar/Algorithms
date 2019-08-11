@@ -5,7 +5,7 @@
 // arrange all elements bigger than pivot to the right
 
 // Time Complexoty : O(nlogn)
-// The sorting takes in-place
+// The sorting takes in-place and hence no extra memory is allocated
 
 
 #include <iostream>
