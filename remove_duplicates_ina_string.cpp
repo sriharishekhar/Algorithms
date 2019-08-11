@@ -4,6 +4,8 @@
 // if it has occured before
 // move to the next element
 // do this for every for every index in the string
+// 
+// Time complexity : O(n^2)
 
 #include <iostream>
 #include <string>
