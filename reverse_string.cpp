@@ -1,3 +1,10 @@
+// Q. Reverse a string
+// Algo : 
+// Start two indexes, one at 0 and one at n-1
+// swap elements at both these indexes
+// increment left side index by 1 and decrement right side index by 1 and keep swapping till you reach mid
+//
+// Time Complexity : O(n)
 
 #include <iostream>
 #include <string>
