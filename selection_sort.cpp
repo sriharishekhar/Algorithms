@@ -1,9 +1,3 @@
-// Q. Implement Selection Sort
-// Algorithm -
-// Traverse from 0 to n, Find smallest element and place it at index 0
-// Now traverse from 1 to n, Find smallest element and place it at index 1
-// Repeat till n
-
 #include <iostream>
 using namespace std;
 
@@ -16,7 +10,7 @@ void swap (int *a, int *b) {
 
 void print (int a[], int n) {
   for (int i = 0; i < n; i++) {
-  	cout << a[i] << " ";
+    cout << a[i] << " ";
   }
 }
 
@@ -27,7 +21,7 @@ void selection_sort(int a[], int n) {
     for (int j = i; j < n; j++) {
       if (a[min_index] > a[j]) 
         min_index = j;
-      }
+    }
     swap (&a[min_index], &a[i]);
   }
   print(a, n);
