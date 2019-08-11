@@ -8,7 +8,7 @@
 // By doing this, the algorithm eliminates the half in which the target value cannot lie in each iteration.
 //
 // Time Complexity : Best case - O(1)
-//                   Worts case - O(logn)
+//                   Worst case - O(logn)
 
 #include <iostream>
 using namespace std;
