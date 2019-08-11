@@ -12,7 +12,7 @@ string remove_duplicates(string& s) {
       }
     }
     if (!repeated) {
-     no_dup.push_back(s[i]);
+      no_dup.push_back(s[i]);
     }
   }
   return no_dup;
@@ -23,5 +23,6 @@ int main() {
   string s = "abrownfoxjumpedupanddown";
   string no_dup = remove_duplicates(s);
   cout << no_dup << endl;
+  return 0;
 }
 
