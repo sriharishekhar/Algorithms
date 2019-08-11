@@ -26,24 +26,24 @@ void print(int a[], int n) {
   cout << endl;
 }
 
-int partition(int a[], int low, int high) {
-  int pivot = a[high];
-  int i = low - 1;
-  for (int j = low; j <= high - 1; j++) {
+int partition(int a[], int first, int last) {
+  int pivot = a[last];
+  int i = first - 1;
+  for (int j = first; j <= last - 1; j++) {
     if (a[j] <= pivot) {
       i++;
       swap(&a[i], &a[j]);
     }
   }
-  swap (&a[i + 1], &a[high]);
+  swap (&a[i + 1], &a[last]);
   return (i + 1);
 }
 
-void quick_sort(int a[], int low, int high) {
-  if (low < high) {
-    int partition_value = partition(a,low,high);
-    quick_sort(a,low, partition_value-1);
-    quick_sort(a, partition_value+1, high);
+void quick_sort(int a[], int first, int last) {
+  if (first < last) {
+    int partition_value = partition(a,first,last);
+    quick_sort(a,first, partition_value-1);
+    quick_sort(a, partition_value+1, last);
   }
 }
 
