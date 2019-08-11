@@ -1,3 +1,10 @@
+// Check to the left in the string if the element has occured before
+// if the element has not occured before
+// copy it to the new string
+// if it has occured before
+// move to the next element
+// do this for every for every index in the string
+
 #include <iostream>
 #include <string>
 using namespace std;
