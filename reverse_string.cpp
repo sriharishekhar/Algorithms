@@ -1,10 +1,3 @@
-// Reverse a string
-// Algorithm -
-// mid = (index of first character + size of string) / 2
-// while (n > mid)
-// swap(character at index 0 i.e first, character at index n i.e n)
-// n--;
-// first ++
 
 #include <iostream>
 #include <string>
@@ -22,9 +15,9 @@ void reverse_string(string& s) {
   int i = 0;
   int mid = n / 2;
   while (n > mid) {
-  	swap (&s[i], &s[n - 1]);
-  	n--;
-  	i++;
+    swap (&s[i], &s[n - 1]);
+    n--;
+    i++;
   }
   cout << "String after reversing : ";
   cout << s << endl;
