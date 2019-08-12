@@ -15,23 +15,21 @@
 
 using namespace std;
 
-int binary_search(vector<int>& v, int l, int r, int x) {
-  if (l <= r) {
-  	int mid = l + (r - l) / 2;
-  	if (v[mid] == x) 
-  	  return mid;
-  	if (x < v[mid])
-  	  return binary_search(v,l,mid-1,x);
-  	else 
-  	  return binary_search(v,mid+1,r,x);
+int binary_search(vector<int>& v, int left, int right, int value) {
+  if (left > right || left >= v.size()) return -1;
+  if (left <= right) {
+  	int mid = left + (right - left) / 2;
+  	if (v[mid] == value) return mid;
+  	if (value < v[mid]) return binary_search(v,left,mid-1,value);
+  	else return binary_search(v,mid+1,right,value);
   }
   return -1;
 }
 
 int main() {
-  vector<int> v {13, 4, 1, 42, 3, 6};
-  int x = 42;
-  int position = binary_search(v,0,v.size(),x);
+  vector<int> v {5, 7, 101, 4555, 7777, 6768865};
+  int value = 42;
+  int position = binary_search(v,0,v.size(),value);
   if (position == -1) {
     cout << "Element not found" << endl;
   }
