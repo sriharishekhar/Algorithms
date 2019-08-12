@@ -8,35 +8,34 @@
 // By doing this, the algorithm eliminates the half in which the target value cannot lie in each iteration.
 //
 // Time Complexity : Best case - O(1)
-//                   Worst case - O(logn)
+//                   Worts case - O(logn)
 
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
-int binary_search(int a[], int l, int r, int x) {
-  if (r >= l) {
-    int mid = (l + r) / 2;
-    if (a[mid] == x) { 
-      return mid;
-    }  
-    if (a[mid] > x) {
-      return binary_search(a, l, mid-1, x);
-    }
-    if (a[mid] < x) {
-      return binary_search(a, mid+1, r, x);
-    }
+int binary_search(vector<int>& v, int l, int r, int x) {
+  if (l <= r) {
+  	int mid = l + (r - l) / 2;
+  	if (v[mid] == x) 
+  	  return mid;
+  	if (x < v[mid])
+  	  return binary_search(v,l,mid-1,x);
+  	else 
+  	  return binary_search(v,mid+1,r,x);
   }
-  return 1;
+  return -1;
 }
 
 int main() {
-  int a[] = {1, 2, 4, 6, 8 , 10, 15 ,18};
-  int n = sizeof(a) / sizeof(a[0]);
-  int x = 8;
-  int result = binary_search(a, 0, n, x);
-  if(result == 1) 
+  vector<int> v {13, 4, 1, 42, 3, 6};
+  int x = 42;
+  int position = binary_search(v,0,v.size(),x);
+  if (position == -1) {
     cout << "Element not found" << endl;
-  else
-    cout << "Element found at position = "  << result << endl;
-  return 0;
+  }
+  else {
+    cout << "Element found at: " << position << endl;
+  }
 }
