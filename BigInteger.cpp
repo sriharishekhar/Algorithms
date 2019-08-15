@@ -47,7 +47,8 @@ public:
   }
   void Print() {
     reverse(result.begin(), result.end());
-      for (int i = 0; i < result.size(); i++) {
+    cout << "Sum = ";
+    for (int i = 0; i < result.size(); i++) {
       cout << result[i];
     }
   cout << endl;
