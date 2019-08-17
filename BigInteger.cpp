@@ -10,65 +10,72 @@
 using namespace std;
 
 class BigInteger {
-private:
-
-public:
-  string s1;
-  string s2;
-  vector<int> v1;
-  vector<int> v2;
-  vector<int> result;
-
-  void Stringtovector() {
+ public:
+  BigInteger(std::string& s1, std::string& s2) {
+    std::reverse(s1.begin(), s1.end());
+    std::reverse(s2.begin(), s2.end());
+    if (s2.size() > s1.size()) {
+      string temp = s1;
+      s1 = s2;
+      s2 = temp; 
+    } 
     for (int i = 0; i < s1.size(); i++) {
-      v1.push_back(s1[i] - 48);
+      v1_.push_back(s1[i] - 48);
     }
     for (int i = 0; i < s2.size(); i++) {
-      v2.push_back(s2[i] - 48);
+      v2_.push_back(s2[i] - 48);
     }
-    if (s1.size() > s2.size()) {
-      for (int i = s2.size(); i < s1.size(); i++) {
-        v2.push_back(0);
+    if (v1_.size() > v2_.size()) {
+      for (int i = v2_.size(); i < v1_.size(); i++) {
+        v2_.push_back(0);
       }
     }
+    Add(v1_,v2_);
   }
-  void Add() {
-    for (int i = 0; i < v1.size(); i++) {
-      int sum, onesdigit, carry, final;
-      string string;
-      carry = 0;
-      sum = v1[i] + v2[i];
-      string = sum;
-      onesdigit = string[1];
-      carry = string[0];
-      final = onesdigit + carry;
-      result.push_back(final);
+
+  void Add(vector<int> v1_, vector<int> v2_) {
+    int carry = 0;
+    for (int i = 0; i < v1_.size(); i++) {
+      int sum = v1_[i] + v2_[i] + carry;
+      string str_sum = std::to_string(sum);
+      int onesdigit;
+      if (str_sum.size() == 1) {
+        onesdigit = str_sum[0] - 48;
+        carry = 0;
+      }
+      else {
+        onesdigit = str_sum[1] - 48;
+        carry = str_sum[0] - 48;
+      }
+      if (i == v1_.size()) {
+        result_.push_back(sum);
+      }
+      else {
+        result_.push_back(onesdigit);
+      }
     }
+    std::reverse(result_.begin(),result_.end());
+    Print();
   }
+
   void Print() {
-    reverse(result.begin(), result.end());
-    cout << "Sum = ";
-    for (int i = 0; i < result.size(); i++) {
-      cout << result[i];
+    for (int i = 0; i < result_.size(); i++) {
+      cout << result_[i];
     }
-  cout << endl;
+    cout << endl;
   }
+
+ private:
+  std::vector<int> v1_;
+  std::vector<int> v2_;
+  std::vector<int> result_;
 };
 
 int main() {
-  BigInteger number;
+  string s1, s2;
   cout << "Enter two numbers" << endl;
-  cin >> number.s1;
-  cin >> number.s2;
-  reverse(number.s1.begin(), number.s1.end());
-  reverse(number.s2.begin(), number.s2.end());
-  if (number.s2.size() > number.s1.size()) {
-    string temp = number.s1;
-    number.s1 = number.s2;
-    number.s2 = temp; 
-  }
-  number.Stringtovector();
-  number.Add();
-  number.Print();
+  cin >> s1;
+  cin >> s2;
+  BigInteger number(s1,s2);
   return 0;
 }
