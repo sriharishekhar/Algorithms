@@ -1,7 +1,8 @@
-// Problem: Implement a BigInteger class that supports addition on arbitarirly large numbers.
+// Problem: Implement a BigInteger class that supports addition on arbitrarily large numbers.
 // We can have numbers upto 10 ^ 18 in long int. BigInteger should support number larger than
 // this limit.
 // For example - 100000000000000000000 + 100000000000000000000 = 200000000000000000000
+// This program also supports addition operation on numbers that are negative.
 
 #include <iostream>
 #include <vector>
