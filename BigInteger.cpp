@@ -134,12 +134,10 @@ class BigInteger {
   void AddIfNegative(vector<int> v1_, vector<int> v2_) {
     for (int i = 0; i < v1_.size(); i++) {
       if (v1_[i] < v2_[i]) {
-        
         v1_[i] = v1_[i] + 10;
         int difference = v1_[i] - v2_[i];
         result_.push_back(difference);
         int j = 1;
-        
         if (v1_[i+j] == 0) {
           while (v1_[i+j] == 0) {
             v1_[i+j] = 9;
@@ -151,7 +149,6 @@ class BigInteger {
           v1_[i+j] = v1_[i+j] - 1;
         }
       }
-      
       else if (v1_[i] > v2_[i]) {
         int difference = v1_[i] - v2_[i];
         result_.push_back(difference);
